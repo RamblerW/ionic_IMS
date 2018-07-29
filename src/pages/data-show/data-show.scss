@@ -1,0 +1,61 @@
+page-data-show {
+    .content{
+        font-size: 5vw;
+        position: relative;
+    }
+    .chart{
+        position: absolute;
+        width: 90%; 
+        height: 70%; 
+        padding: 5% 0;
+    }
+    .devices{
+        width: 90%;
+        text-align: center;
+        position: fixed;
+        bottom: 75px;
+    }
+    .device{
+        font-size: 16px;
+        color: black;
+        padding-right: 5px;
+    }
+    .chart4{
+        padding: 10px 0;
+        height: 100%;
+        overflow: auto;
+    }
+    .warnBlock{
+        min-height: 20vh;
+    }
+    .warnTitle{
+        width: 100%;
+        height: 40px !important;
+        line-height: 40px;
+        font-size: 24px;
+        text-align: center;
+    }
+    .warnContent{
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+    }
+    .warnItem{
+        font-size: 20px;
+        color: black;
+        padding-right: 15px;
+    }
+    .red{
+        background-color: #d9534f;
+    }
+    .yellow{
+        background-color: #f0ad4e;
+    }
+    .green{
+        background-color: #5cb85c;
+    }
+    .div-date {
+        width: 100%;
+        text-align: center;
+    }
+}

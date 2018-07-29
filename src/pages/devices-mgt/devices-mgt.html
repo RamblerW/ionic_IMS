@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>设备管理</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div class="content">
+        <ion-list *ngIf="flag==0">
+            <ion-item>
+                <ion-label col-5 class="txtRight"><span class="warn">*</span>传感器编号：</ion-label>
+                <ion-input type="number" [(ngModel)]="seneorNo"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight"><span class="warn">*</span>传感器IP：</ion-label>
+                <ion-input type="text" [(ngModel)]="seneorIp" readonly></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight">传感器名称：</ion-label>
+                <ion-input type="text" [(ngModel)]="seneorName"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight">传感器密码：</ion-label>
+                <ion-input type="text" [(ngModel)]="seneorPword"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight">传感器电量：</ion-label>
+                <ion-input type="number" [(ngModel)]="seneorEle"></ion-input>
+            </ion-item>
+            <ion-item>
+                <div class="div-next">
+                    <button ion-button class="btnNext" (click)="toNext()">下一步</button>
+                </div>
+            </ion-item>
+        </ion-list>
+
+        <ion-list *ngIf="flag==1">
+            <ion-item>
+                <ion-label col-5 class="txtRight">设备名称：</ion-label>
+                <ion-input type="text" [(ngModel)]="deviceName"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight"><span class="warn">*</span>设备编号：</ion-label>
+                <ion-input type="text" [(ngModel)]="deviceNo"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight">设备类型：</ion-label>
+                <ion-input type="text" [(ngModel)]="deviceType"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight">设备型号：</ion-label>
+                <ion-input type="text" [(ngModel)]="deviceModel"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight">电压等级：</ion-label>
+                <ion-input type="text" [(ngModel)]="voltageGrade"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight">生产厂家：</ion-label>
+                <ion-input type="text" [(ngModel)]="producer"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight">运行单位：</ion-label>
+                <ion-input type="text" [(ngModel)]="operationDepart"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight">出厂编号：</ion-label>
+                <ion-input type="text" [(ngModel)]="factoryNo"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight">出厂日期：</ion-label>
+                <ion-datetime displayFormat="YYYY-MM-DD" cancelText="取消" doneText="确认" [(ngModel)]="factoryDate"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight">投运日期：</ion-label>
+                <ion-datetime displayFormat="YYYY-MM-DD" cancelText="取消" doneText="确认" [(ngModel)]="useDate"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label col-5 class="txtRight">变电站名称：</ion-label>
+                <ion-input type="text" [(ngModel)]="substationName"></ion-input>
+            </ion-item>
+            <ion-item>
+                <div class="div-next">
+                    <button ion-button class="btnNext" (click)="toNext()">上一步</button>
+                </div>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
+<ion-footer>
+    <div class="div-footer">
+        <button ion-button class="btnSave" (click)="doSave()">保&nbsp;存</button>
+        <button ion-button color="danger" class="btnDelete" (click)="doDelete()">删&nbsp;除</button>
+    </div>
+</ion-footer>

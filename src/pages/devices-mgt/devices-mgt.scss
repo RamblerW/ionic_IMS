@@ -1,0 +1,43 @@
+page-devices-mgt {
+    //标题栏文字
+    .toolbar-title-md{
+        text-align: left;
+    }
+    .content{
+        font-size: 4vw;
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-flow: row wrap;
+    }
+    ion-list{
+        align-self: flex-start;
+        width: 100%;
+    }
+    .div-next {
+        display: flex;
+        justify-content: center;
+    }
+    button{
+        height: 35px !important;
+    }
+    //上一步/下一步按钮
+    .btnNext {
+        padding: 0 20px !important;
+    }
+    .div-footer{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    //保存按钮
+    .btnSave{
+        width: 45% !important;
+        margin-right: 2%;
+    }
+    //删除按钮
+    .btnDelete{
+        width: 45% !important;
+        margin-left: 2%;
+    }
+}

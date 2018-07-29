@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>开关柜局部放电智能监测系统</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="content">
+    <ion-list>
+      <ion-item *ngFor="let item of devicesData;let i=index;" (click)="pageJump(item.device_id,item.device_name)"
+       (press)="deleteDevice(item.device_id,item.device_name,item.device_no)">
+        <ion-avatar item-start>{{item.device_no}}</ion-avatar>
+        <h2>{{item.device_name}}</h2>
+        <h3>{{item.seneor_name}}&#12288;{{item.seneor_no}}&#12288;{{item.seneor_ip}}</h3>
+        <p>{{item.factory_date | date: 'yyyy-MM-dd'}}&#12288;{{item.use_date | date: 'yyyy-MM-dd'}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="div-addDevice">
+    <button ion-button class="btnAddDevice" (click)="pageJump()">新增设备</button>
+  </div>
+</ion-footer>

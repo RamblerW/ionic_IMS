@@ -1,0 +1,28 @@
+page-devices-show {
+    .content{
+        font-size: 4vw;
+        position: relative;
+        height: 100%;
+        // display: flex;
+        // flex-flow: row wrap;
+    }
+    // ion-list{
+    //     align-self: flex-start;
+    //     width: 100%;
+    // }
+    // .div-addDevice {
+    //     width: 100%;
+    //     align-self: flex-end;
+    //     text-align: center;
+    // }
+    .div-addDevice {
+        width: 100%;
+        text-align: center;
+    }
+    //添加设备按钮
+    .btnAddDevice{
+        height: 35px !important;
+        width: 90%;
+        margin-bottom: 10px;
+    }
+}

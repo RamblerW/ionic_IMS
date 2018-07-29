@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>开关柜局部放电智能监测系统</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-segment [(ngModel)]="dataType">
+    <ion-segment-button value="1" (ionSelect)="ionSelectEvent('1')">横向分析</ion-segment-button>
+    <ion-segment-button value="2" (ionSelect)="ionSelectEvent('2')">纵向分析</ion-segment-button>
+    <ion-segment-button value="3" (ionSelect)="ionSelectEvent('3')">单柜信息</ion-segment-button>
+    <ion-segment-button value="4" (ionSelect)="ionSelectEvent('4')">预警状态</ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="dataType">
+    <div *ngSwitchCase="'1'" class="page">
+      <div id="chart1" class="chart"></div>
+      <div class="devices">
+        <a class="device" *ngFor="let item of deviceInfos" (click)="getThirdChartInfo(item)" href="#">
+          {{(item.device_name == undefined || item.device_name == null || item.device_name == '')?item.device_no:item.device_name}}
+        </a>
+      </div>
+    </div>
+    <div *ngSwitchCase="'2'">
+      <div id="chart2" class="chart"></div>
+      <div class="devices">
+        <a class="device" *ngFor="let item of deviceInfos" (click)="getThirdChartInfo(item)" href="#">
+          {{(item.device_name == undefined || item.device_name == null || item.device_name == '')?item.device_no:item.device_name}}
+        </a>
+      </div>
+    </div>
+    <div *ngSwitchCase="'3'">
+      <div id="chart3" class="chart"></div>
+      <div class="devices">
+        <a class="device" *ngFor="let item of deviceInfos" (click)="getThirdChartInfo(item)" href="#">
+          {{(item.device_name == undefined || item.device_name == null || item.device_name == '')?item.device_no:item.device_name}}
+        </a>
+      </div>
+    </div>
+    <div *ngSwitchCase="'4'" class="chart4">
+      <div class="warnBlock">
+        <div class="warnTitle red">预&#12288;警</div>
+        <div class="warnContent">
+          <span class="warnItem" *ngFor="let item of warnDevices">{{item}}</span>
+        </div>
+      </div>
+  
+      <div class="warnBlock">
+        <div class="warnTitle yellow">关&#12288;注</div>
+        <div class="warnContent">
+          <span class="warnItem" *ngFor="let item of focusDevices">{{item}}</span>
+        </div>
+      </div>
+  
+      <div class="warnBlock">
+        <div class="warnTitle green">正&#12288;常</div>
+        <div class="warnContent">
+          <span class="warnItem" *ngFor="let item of normalDevices">{{item}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+    <div class="div-date" *ngIf = "showInputDate">
+      <ion-datetime displayFormat="YYYY-MM-DD" cancelText="取消" doneText="确认" [(ngModel)]="inputDate" (ngModelChange)="getFourthChartInfo()"></ion-datetime>
+    </div>
+  </ion-footer>

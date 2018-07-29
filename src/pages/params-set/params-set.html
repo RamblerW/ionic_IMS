@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>开关柜局部放电智能监测系统</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="下拉刷新"
+        refreshingSpinner="circles"
+        refreshingText="刷新中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div class="content">
+    <ion-list>
+      <ion-item>
+        <ion-label col-7 class="txtRight">触发阈值/dB：</ion-label>
+        <ion-input type="number" [(ngModel)]="focusVal"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label col-7 class="txtRight">预警阈值/dB：</ion-label>
+        <ion-input type="number" [(ngModel)]="warnVal"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label col-7 class="txtRight">自启动时间间隔/h：</ion-label>
+        <ion-input type="number" [(ngModel)]="timeSub"></ion-input>
+      </ion-item>
+      <ion-item>
+        <div class="div-save">
+          <button ion-button class="btnSave" (click)="doSave()">保&nbsp;存</button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<!-- <ion-footer>
+  <div class="div-testNoise">
+    <button ion-button class="btnTestNoise" (click)="doTestNoise()">噪声评估</button>
+  </div>
+</ion-footer> -->

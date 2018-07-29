@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>开关柜局部放电智能监测系统</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="下拉刷新"
+        refreshingSpinner="circles"
+        refreshingText="刷新中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div class="content">
+    <!-- <ion-grid class="grid-info">
+      <ion-row>
+        <ion-col col-6>当前设备：</ion-col>
+        <ion-col col-6>
+          <span [ngClass]="{'warn':curDevice == '未连接'}">{{(curDevice == '未连接'&& curDeviceNo != undefined && curDeviceNo != '')?curDeviceNo:curDevice}}</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>电&#12288;&#12288;量：</ion-col>
+        <ion-col col-6>
+          <span [ngClass]="{'warn':(eleQuantity == undefined || eleQuantity == '')}">{{(eleQuantity == undefined || eleQuantity == '')?'设备编号有误':eleQuantity}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="div-btn">
+      <button ion-fab color="primary" class="btnCollect">
+        <span class="txtCollect" (click)="doCollect()">立即采集</span>
+      </button>
+    </div> -->
+    <div id="chart" class="chart"></div>
+    <div class="currentStatus">
+      <h1 class="statusTitle">当前状态</h1>
+      <div>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6 class="statusName">脉冲数：</ion-col>
+            <ion-col class="statusVal">{{curPulseNum}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6 class="statusName">平均放电幅值/dB：</ion-col>
+            <ion-col class="statusVal">{{curAvgAmplitude}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6 class="statusName">电池电量：</ion-col>
+            <ion-col class="statusVal">{{curEleQuantity}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6 class="statusName">最大放电幅值/dB：</ion-col>
+            <ion-col class="statusVal">{{curMaxAmplitude}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="div-footer">
+    <div class="div-footer-data">
+      <button ion-button class="btnCur" (click)="doGetCurData()">即时数据采集</button>
+      <button ion-button class="btnHis" (click)="doGetHisData()">历史数据获取</button>
+    </div>
+  </div>
+  <div class="div-footer">
+    <button ion-button class="btnConnectWifi" (click)="doConnectWifi()">连接Wifi</button>
+  </div>
+</ion-footer>

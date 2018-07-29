@@ -1,0 +1,30 @@
+// App Global Sass
+// 按钮
+button {
+  height: 35px ;
+  padding: 0 20px !important;
+  font-size: 1.5rem !important;
+}
+// 标题栏背景
+.toolbar-background-md {
+    background: #37ca4c;
+}
+//标题栏文字
+.toolbar-title-md{
+    color: white;
+    text-align: center;
+}
+//警告字体颜色
+.warn{
+    color: red;
+}
+.txtRight{
+    text-align: right;
+}
+.txtCenter{
+    text-align: center;
+}
+//时间选择框
+.picker-opt{
+    width:auto !important;
+}
